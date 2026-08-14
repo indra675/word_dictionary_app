@@ -1,0 +1,63 @@
+WORD DICTIONARY APP — HOW TO RUN
+==================================
+
+PART 1: REOPENING ON YOUR CURRENT PC
+--------------------------------------
+Every time you come back to work on this project, do these 3 steps:
+
+Step 1 - Open terminal and go to the backend folder:
+    cd C:\PROJECT\word_dictionary_app\backend
+
+Step 2 - Turn on the virtual environment:
+    ..\venv\Scripts\activate
+
+    (Your prompt should now show (venv) at the start)
+
+Step 3 - Start the server:
+    uvicorn main:app --reload --port 8001
+
+Then open this in your browser:
+    http://127.0.0.1:8001/docs
+
+Your data is safe — it's stored in dictionary.db and does not
+get erased when you close the terminal.
+
+
+PART 2: SETTING UP ON A NEW/DIFFERENT PC
+--------------------------------------
+You cannot copy the venv folder to another PC — it must be rebuilt fresh.
+Instead, carry over only these 3 files:
+    - main.py
+    - database.py
+    - requirements.txt
+(Optional: copy dictionary.db too, if you want your existing words to come along)
+
+STEP A - On your CURRENT pc, create requirements.txt (one-time):
+    With your venv active, run:
+        pip freeze > requirements.txt
+    This lists the exact packages your project needs (fastapi, uvicorn, etc).
+    Copy this file next to main.py and database.py.
+
+STEP B - On the NEW pc, one-time setup:
+
+    1. Create a folder and place your 3 files inside it:
+        mkdir C:\PROJECT\word_dictionary_app\backend
+        (paste main.py, database.py, requirements.txt into this folder)
+
+    2. Go into that folder:
+        cd C:\PROJECT\word_dictionary_app\backend
+
+    3. Create a fresh virtual environment:
+        python -m venv ..\venv
+
+    4. Activate it:
+        ..\venv\Scripts\activate
+
+    5. Install all required packages in one shot:
+        pip install -r requirements.txt
+
+    6. Run the server:
+        uvicorn main:app --reload --port 8001
+
+After this one-time setup, reopening the project on that new PC
+follows the same 3 steps as PART 1 above.
