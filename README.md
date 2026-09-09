@@ -1,7 +1,7 @@
 # 📖 Word Dictionary App
 
 A full-stack CRUD application that manages a dictionary of words and their meanings — built as an evolution of a simple Python CLI script into a real REST API backed by a database, and deployed live on the web.
-
+---
 🔗 **Live API:** https://word-dictionary-app-1.onrender.com/docs
 
 ---
